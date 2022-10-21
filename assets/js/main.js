@@ -91,9 +91,9 @@ function calculateDrill() {
 }
 
 function calculateLabour() {
-    let ig_qty = parseFloat($('[name="ig-quantity"]').val());
-    let ic_qty = parseFloat($('[name="ic-quantity"]').val());
-    let ag_qty = parseFloat($('[name="ag-quantity"]').val());
+    let ig_qty = parseFloat($('[name="ig-quantity"]').val()) || 0;
+    let ic_qty = parseFloat($('[name="ic-quantity"]').val()) || 0;
+    let ag_qty = parseFloat($('[name="ag-quantity"]').val()) || 0;
 
     let duration = 120; // allow 60 minutes for initial setup, 60 minutes for paperwork
 
@@ -101,21 +101,16 @@ function calculateLabour() {
     duration += ic_qty * 30;
     duration += ag_qty * 30;
 
-    $('[name="lb-quantity"]').val(duration);
+    let hours = Math.ceil(duration / 60);
+
+    $('[name="lb-quantity"]').val(hours);
 }
 // ------------------------------------------------------------
 // Auto-Calculate Form Inputs
 // ------------------------------------------------------------
 
 $(document).ready(function() {
-    $("#accordion").accordion({
-        active: 2,
-        collapsible: true,
-        header: "hr",
-        heightStyle: "content"
-    });
-
-    $(".title").children("small").fadeOut(0);
+    $(".title").children(".flash").fadeOut(0);
 
     $("textarea[readonly]").each(function() {
         $(this)[0].default_text = $(this).html();
@@ -123,7 +118,7 @@ $(document).ready(function() {
     });
 
     $("textarea[readonly]").click(function() {
-        $(this).prev(".title").children("small").fadeIn(0, function() {
+        $(this).prev(".title").children(".flash").fadeIn(0, function() {
             $(this).fadeOut(1500);
         });
 
@@ -135,11 +130,6 @@ $(document).ready(function() {
     });
 
     $(this).trigger('change');
-
-    $("hr").click(function () {
-        let counter = parseInt($(this).css('--rotation').slice(0, -3)) + 180;
-        $(this).css('--rotation', counter + "deg");
-    });
 });
 
 $(document).on('change keyup', function() {
