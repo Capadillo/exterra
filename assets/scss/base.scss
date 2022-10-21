@@ -63,11 +63,28 @@ body {
 // --------------------------------------------------
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    padding-bottom: $gutter * 2;
+    text-align: center;
+
+    small {
+        color: $color;
+        display: block;
+        font-size: 1rem;
+    }
+}
+
+h2 {
+    color: $color;
+    font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
     padding: 0;
     padding-bottom: 1rem;
+    text-align: center;
 }
 
 .heading {
