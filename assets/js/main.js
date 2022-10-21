@@ -88,9 +88,21 @@ function calculateDrill() {
     } else {
         $('[name="dh-price"]').val(0);
     }
-
 }
 
+function calculateLabour() {
+    let ig_qty = parseFloat($('[name="ig-quantity"]').val());
+    let ic_qty = parseFloat($('[name="ic-quantity"]').val());
+    let ag_qty = parseFloat($('[name="ag-quantity"]').val());
+
+    let duration = 120; // allow 60 minutes for initial setup, 60 minutes for paperwork
+
+    duration += ig_qty * 15;
+    duration += ic_qty * 30;
+    duration += ag_qty * 30;
+
+    $('[name="lb-quantity"]').val(duration);
+}
 // ------------------------------------------------------------
 // Auto-Calculate Form Inputs
 // ------------------------------------------------------------
@@ -148,6 +160,8 @@ $(document).on('change keyup', function() {
     });
 
     calculateDrill();
+    calculateLabour();
+
     qc.calculate('[name="total"]');
     qc.calculate_gst('[name="total-gst"]');
 });
