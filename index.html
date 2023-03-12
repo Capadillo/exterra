@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exterra Proposal Generator</title>
+        <!-- browser -->
+        <link rel="manifest" href="/manifest.json">
+        <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+        <meta name="theme-color" content="white">
+        <!-- apple -->
+        <link rel="apple-touch-icon" href="/assets/images/icon-152.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <meta name="apple-mobile-web-app-title" content="Capadillo.IO">
+        <!-- microsoft -->
+        <meta name="msapplication-TileImage" content="/assets/images/icon-144.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <!-- styles -->
+        <link rel="stylesheet" href="./assets/css/base.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Exterra Proposal Generator</h2>
+
+            <div class="field-group">
+                <div class="title">In Ground</div>
+
+                <div class="field">
+                    <label for="ig-price">Price per Unit</label>
+                    <input type="number" name="ig-price" id="ig-price" min="0" value="19.26">
+                </div>
+
+                <div class="field">
+                    <label for="ig-quantity">Number of Units</label>
+                    <input type="number" name="ig-quantity" id="ig-quantity" min="0">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="title">In Concrete</div>
+
+                <div class="field">
+                    <label for="ic-price">Price per Unit</label>
+                    <input type="number" name="ic-price" id="ic-price" min="0" value="23.16">
+                </div>
+
+                <div class="field">
+                    <label for="ic-quantity">Number of Units</label>
+                    <input type="number" name="ic-quantity" id="ic-quantity" min="0">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="title">Above Ground</div>
+
+                <div class="field">
+                    <label for="ag-price">Price per Unit</label>
+                    <input type="number" name="ag-price" id="ag-price" min="0" value="97.69">
+                </div>
+
+                <div class="field">
+                    <label for="ag-quantity">Number of Units</label>
+                    <input type="number" name="ag-quantity" id="ag-quantity" min="0">
+                </div>
+            </div>
+
+            <div class="field-group" id="accordion">
+                <hr class="span">
+
+                <div class="span gutter-top">
+                    <div class="field-group">
+                        <div class="title">Labour</div>
+
+                        <div class="field">
+                            <label for="lb-price">Rate per Hour</label>
+                            <input type="number" name="lb-price" id="lb-price" min="0" value="175.00">
+                        </div>
+
+                        <div class="field">
+                            <label for="lb-quantity">Expected Hours</label>
+                            <input type="number" name="lb-quantity" id="lb-quantity" min="0">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="title">Site Fee</div>
+
+                        <div class="field">
+                            <label for="sf-price">Fee per Site</label>
+                            <input type="number" name="sf-price" id="sf-price" min="0" value="599.00">
+                        </div>
+
+                        <div class="field">
+                            <label for="sf-quantity">Toggle</label>
+                            <input type="checkbox" name="sf-toggle" id="sf-toggle" checked>
+                            <label for="sf-toggle">&nbsp;</label>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="title">Drill Hire <small>Auto-Calculated</small></div>
+
+                        <div class="field">
+                            <label for="dh-price">Price per Hole</label>
+                            <input type="number" name="dh-price" id="dh-price" min="0" readonly>
+                        </div>
+
+                        <div class="field">
+                            <label for="dh-toggle">Toggle</label>
+                            <input type="checkbox" name="dh-toggle" id="dh-toggle" checked>
+                            <label for="dh-toggle">&nbsp;</label>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="title">Timber Pest Inspection</div>
+
+                        <div class="field">
+                            <label for="tp-price">Price per Inspection</label>
+                            <input type="number" name="tp-price" id="tp-price" min="0" value="310.00">
+                        </div>
+
+                        <div class="field">
+                            <label for="tp-toggle">Toggle</label>
+                            <input type="checkbox" name="tp-toggle" id="tp-toggle">
+                            <label for="tp-toggle">&nbsp;</label>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="title">Station Monitor Visits</div>
+
+                        <div class="field">
+                            <label for="sm-price">Price per Visit</label>
+                            <input type="number" name="sm-price" id="sm-price" min="0" value="220.00">
+                        </div>
+
+                        <div class="field">
+                            <label for="sm-quantity">Number of Visits</label>
+                            <input type="number" name="sm-quantity" id="sm-quantity" min="0" value="5">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="title">Total</div>
+
+                <div class="field span">
+                    <label for="total">Excl. GST</label>
+                    <input type="number" name="total" id="total" min="0" readonly>
+                </div>
+
+                <div class="field span">
+                    <label for="total-gst">Incl. GST</label>
+                    <input type="number" name="total-gst" id="total-gst" min="0" readonly>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="title">TMS Overview <small>Copied...</small></div>
+
+                <textarea readonly>I recommend the installation of an Exterra Interception and Baiting System to the external perimeter of the dwelling. Stations will be installed no more than 3 meters apart and will be monitored every 8 weeks for a 12-month cover period. If any stations become active during the cover period, Requiem Termite Bait will be applied and monitoring visits will increase in frequency to every 4 weeks until activity has ceased. If termites enter the dwelling, or already exist in the dwelling during the cover period, an above ground station will be installed at the point of activity and monitored every 4 weeks until activity has ceased.</textarea>
+            </div>
+
+            <div class="field-group">
+                <div class="title">Exterra System <small>Copied...</small></div>
+
+                <textarea readonly>A total of {{tl}} stations will be installed. Where there is concrete, a core cut will be made using an electric drill and covered using a slip-resistant cap. This quote allows for {{ig}} in ground stations and {{ic}} core cuts.</textarea>
+            </div>
+
+            <div class="field-group">
+                <div class="title">Above Ground Station(s) <small>Copied...</small></div>
+
+                <textarea readonly>A total of {{ag}} above ground stations will be installed where termite activity has been detected. Once installed, the station must remain undisturbed until the next check is performed.</textarea>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
